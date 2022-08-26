@@ -1,5 +1,5 @@
 const disModel = document.querySelector("");
-const nodeBackground = document.querySelector("");
+const nodeBackground = document.querySelector("node-background");
 const nodeCloseBtn = document.querySelector("");
 const nodeBookModel = document.querySelector("");
 const nodeDeleteBackground = document.querySelector("");
@@ -37,7 +37,19 @@ class Book {
 	}
 }
 
+//Add a abook button to the form
+nodeFormAddBtn.addEventListener("click", function () {
+	const newBook = new Book(
+		titleInput.value,
+		authorInput.value,
+		pagesInput.value,
+		readInput.checked,
+	);
+	elementId = newBook.arrId;
+	myLibrary.push(newBook);
+	renderBookCard();
+	nodeBackground.classList.remove();
+	disModel.classList.remove();
+	form.reset()
+});
 
-function addBookToLibrary() {
-
-}
