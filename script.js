@@ -1,17 +1,17 @@
-const disModel = document.querySelector(".add-book");
+const disModel = document.querySelector(".node-add-book");
 const nodeBackground = document.querySelector(".node-background");
 const nodeCloseBtn = document.querySelector(".close");
-const nodeBookModel = document.querySelector(".add-book");
+const nodeBookModel = document.querySelector(".node-add-book");
 const nodeDeleteBackground = document.querySelector(".node-delete-modal-background");
 const nodeDeleteWarning = document.querySelector(".node-delete-warning warning-style");
 
 //Start Buttons
 const nodeAddBookBtn = document.querySelector(".add");
 const nodeDeleteAllBtn = document.querySelector(".remove-all");
-const nodeDeleteBtn = document.querySelector("");
-const nodeDelModelBtn = document.querySelector("");
-const nodeCancelBtn = document.querySelector("");
-const nodeTrashBtn = document.querySelector("");
+const nodeDeleteBtn = document.querySelector(".remove");
+const nodeDelModelBtn = document.querySelector(".remove-close");
+const nodeCancelBtn = document.querySelector(".cancel");
+const nodeTrashBtn = document.querySelector(".trash");
 const nodeFormAddBtn = document.querySelector(".node-form-add-btn");
 
 //
