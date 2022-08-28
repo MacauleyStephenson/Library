@@ -1,28 +1,28 @@
-const disModel = document.querySelector("");
-const nodeBackground = document.querySelector("node-background");
-const nodeCloseBtn = document.querySelector("");
-const nodeBookModel = document.querySelector("");
-const nodeDeleteBackground = document.querySelector("");
-const nodeDeleteWarning = document.querySelector("");
+const disModel = document.querySelector(".add-book");
+const nodeBackground = document.querySelector(".node-background");
+const nodeCloseBtn = document.querySelector(".close");
+const nodeBookModel = document.querySelector(".add-book");
+const nodeDeleteBackground = document.querySelector(".node-delete-modal-background");
+const nodeDeleteWarning = document.querySelector(".node-delete-warning warning-style");
 
 //Start Buttons
-const nodeAddBook = document.querySelector("");
-const nodeDeleteAllBtn = document.querySelector("");
+const nodeAddBookBtn = document.querySelector(".add");
+const nodeDeleteAllBtn = document.querySelector(".remove-all");
 const nodeDeleteBtn = document.querySelector("");
 const nodeDelModelBtn = document.querySelector("");
 const nodeCancelBtn = document.querySelector("");
 const nodeTrashBtn = document.querySelector("");
-const nodeFormAddBtn = document.querySelector("");
+const nodeFormAddBtn = document.querySelector(".node-form-add-btn");
 
 //
-const BookContainer = document.querySelector("main");
+const BookContainer = document.querySelector(".main");
 
 //Form element inputs
-const form = document.querySelector("");
-let titleInput = document.getElementById("");
-let authorInput = document.getElementById("");
-let pagesInput = document.getElementById("");
-let readInput = document.getElementById("");
+const form = document.querySelector(".form-style");
+let titleInput = document.getElementById("title");
+let authorInput = document.getElementById("author");
+let pagesInput = document.getElementById("pages");
+let readInput = document.getElementById("read");
 
 //Objects array
 let elementId;
