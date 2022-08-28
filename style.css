@@ -10,8 +10,51 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+
 html{
 	height: 150px;
 	background-color: var(--dark-slate-gray);
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.229);
+}
+
+main{
+	height: auto;
+}
+.header-container{
+	display: flex;
+    max-width: 1440px;
+    width: 80%;
+
+    margin: 0 auto;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+
+}
+.header h1 {
+    font-size: 4.6rem;
+    color: var(--ash-gray);
+}
+.header button {
+    background: var(--dark-sea-green);
+
+    border-radius: 10px;
+    padding: 1rem;
+    border: none;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.227);
+
+}
+
+.form-style {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 auto;
+
+
+    width: 90%;
+    height: 100%;
+
 }
