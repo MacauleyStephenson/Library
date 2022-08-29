@@ -63,11 +63,55 @@ function renderLibrary() {
 	const dynamicAuthor = document.createElement("p");
 	const divPages = document.createElement("div");
 	const labelPages = document.createElement("p");
-	const dynamicpages = document.createElement("p");
+	const dynamicPages = document.createElement("p");
 	const divRead = document.createElement("div");
 	const readChanges = document.createElement("button");
 	const dynamicRead = document.createElement("p");
 	//
 	BookContainer.appendChild(newCard);
 	newCard.appendChild(deleteBook);
+	deleteBook.classList.add("trash");
+	deleteBook.setAttribute(
+		"src",
+		"img"
+	);
+	newCard.setAttribute(`eleId`, `${elementId}`);
+	//
+
+	newCard.appendChild(titleDiv);
+	titleDiv.classList.add("book-title");
+	titleDiv.appendChild(titlelabel);
+	titlelabel.textContent = `Title:`;
+	titleDiv.appendChild(dynamicTitle);
+	newCard.appendChild(divAuthor);
+	divAuthor.classList.add("book-author");
+	divAuthor.appendChild(labelAuthor);
+	labelAuthor.textContent = `Author:`;
+	divAuthor.appendChild(dynamicAuthor);
+	newCard.appendChild(divPages);
+	divPages.classList.add("book-pages");
+	divPages.appendChild(labelPages);
+	divPages.textContent = `Pages:`;
+	divPages.appendChild(dynamicPages);
+
+	//
+	newCard.appendChild(divRead);
+	divRead.classList.add("book-read");
+	divRead.appendChild(readChanges);
+	readChanges.textContent = "Change Status";
+	divRead.appendChild(dynamicRead);
+
+	//delete card
+	deleteBook.addEventListener("click", function () {
+		let currentIndex = myLibrary.findIndex(
+			(book) => newCard.getAttribute("eleId") == book.arrId
+		);
+		console.log(newCard.getAttribute("eleId"));
+		console.log(elementid);
+		console.log(currentIndex);
+
+		myLibrary.splice(currentIndex, 1);
+		newCard.remove();
+	})
+
 }
