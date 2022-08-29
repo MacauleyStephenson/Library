@@ -47,9 +47,27 @@ nodeFormAddBtn.addEventListener("click", function () {
 	);
 	elementId = newBook.arrId;
 	myLibrary.push(newBook);
-	renderBookCard();
+	renderLibrary();
 	nodeBackground.classList.remove();
 	disModel.classList.remove();
 	form.reset()
 });
-
+function renderLibrary() {
+	const newCard = document.createElement("div");
+	const deleteBook = document.createElement("img");
+	const titleDiv = document.createElement("div");
+	const titlelabel = document.createElement("p");
+	const dynamicTitle = document.createElement("p");
+	const divAuthor = document.createElement("div");
+	const labelAuthor = document.createElement("p");
+	const dynamicAuthor = document.createElement("p");
+	const divPages = document.createElement("div");
+	const labelPages = document.createElement("p");
+	const dynamicpages = document.createElement("p");
+	const divRead = document.createElement("div");
+	const readChanges = document.createElement("button");
+	const dynamicRead = document.createElement("p");
+	//
+	BookContainer.appendChild(newCard);
+	newCard.appendChild(deleteBook);
+}
