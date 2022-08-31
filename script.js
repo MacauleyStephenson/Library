@@ -112,6 +112,13 @@ function renderLibrary() {
 
 		myLibrary.splice(currentIndex, 1);
 		newCard.remove();
-	})
-
+	});
+	dynamicTitle.textContent = titleInput.value;
+	dynamicAuthor.textContent = authorInput.value;
+	dynamicPages.textContent = pagesInput.value;
+	if (!readInput.checked) {
+		dynamicRead.textContent = "Unread";
+	} else {
+		dynamicRead.textContent = "Read";
+	}
 }
