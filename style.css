@@ -94,8 +94,11 @@ main{
         display: none;
 
 }
-.node-visible {
+.main-visible {
     display: block;
+}
+.node-background-visible{
+	display: block;
 }
 .form-style {
     display: flex;
@@ -107,5 +110,249 @@ main{
 
     width: 90%;
     height: 100%;
+}
 
+.form-style label {
+    font-size: 2.8rem;
+    color: var(--ash-gray);
+}
+
+.form-style input {
+    border: none;
+    width: 90%;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 2.1rem;
+}
+
+.form-style input:focus {
+    outline: 5px solid lightskyblue;
+}
+
+.check-container{
+	display: flex;
+	gap: 5rem;
+}
+
+.yes input {
+    height: 30px;
+    width: 30px;
+}
+
+.no {
+    display: flex;
+    gap: 1rem;
+}
+
+.no input {
+    height: 30px;
+    width: 30px;
+}
+
+.form-style p {
+    color: var(--ash-gray);
+    font-size: 2.8rem;
+}
+
+.form-style button {
+    background: var(--dark-sea-green);
+    color: white;
+    font-size: 3.2rem;
+    width: 50%;
+
+        border-radius: 10px;
+        padding: 1rem;
+        border: none;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.227);
+}
+
+.form-style button:hover {
+    background-color: var(--ash-gray);
+        color: var(--charcoal);
+        cursor: pointer;
+}
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.close:hover {
+    transform: scale(1.1);
+    background: var(--charcoal);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* START Delete All Button Confirmation Modal Styles */
+.warning-style {
+
+    position: relative;
+    top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 500px;
+    height: 650px;
+    background: var(--ash-gray);
+    border-radius: 10px;
+    border: 3px solid var(--dark-slate-gray);
+display: none;
+    z-index: 1010;
+
+
+
+}
+
+.warning-text {
+    font-size: 3.6rem;
+    font-weight: 800;
+    text-align: center;
+    padding: 2rem;
+    color: firebrick;
+}
+
+.cancel {
+    border: 2px white solid;
+    width: 80%;
+    background: var(--dark-sea-green);
+    font-size: 3.8rem;
+    color: white;
+
+    border-radius: 10px;
+     padding: 3rem;
+    border: none;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.227);
+}
+
+.cancel:hover {
+    background: lightgreen;
+
+        cursor: pointer;
+        transform: scale(1.05);
+        transition: all ease-in-out .3s;
+}
+
+.remove{
+	width: 80%;
+	background: firebrick;
+	font-size: 3.8rem;
+	color: white;
+
+	border-radius: 10px;
+	padding: 3rem;
+	border: none;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.227);
+}
+.remove:hover {
+    background: orange;
+    outline: 5px firebrick dashed;
+    transform: scale(1.05);
+        transition: all ease-in-out .3s;
+}
+.remove-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.remove-close:hover {
+    transform: scale(1.1);
+        background: var(--dark-sea-green);
+        border-radius: 50%;
+        cursor: pointer;
+}
+.node-delete-modal-background {
+    background: hsla(201, 20%, 23%, .8);
+    z-index: 1000;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   display: none;
+}
+
+.warn-modal-visible {
+    display: flex;
+}
+
+.warn-modal-background-visible {
+    display: flex;
+}
+
+
+/* Book Cards Styles */
+.book-card-container {
+    position: relative;
+    color: white;
+    text-align: center;
+    font-size: 2.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 350px;
+    height: 500px;
+    border: 1px black solid;
+    border-radius: 10px;
+    border: none;
+    background-image: linear-gradient(0deg,
+
+
+        #52796fff,
+        #354f52ff,
+        #2f3e46ff);
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+.book-card-container:hover {
+    transform: scale(1.03);
+
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+    transition: all ease-in-out .3s;
+}
+.trash {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 3.5rem;
+    width: 3.5rem;
+    padding: .5rem;
+}
+.trash:hover {
+    background: firebrick;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.book-read {
+    width: 90%;
+    display: flex;
+   justify-content: space-around;
+   align-items: center;
+
+}
+.book-read button {
+    color: white;
+    letter-spacing: .1rem;
+    background: var(--dark-sea-green);
+    border-radius: 10px;
+    padding: 1rem;
+    border: none;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.227);
+}
+.book-read button:hover {
+    background: var(--ash-gray);
+    color: var(--charcoal);
+    cursor: pointer;
+}
+.book-read button:active {
+    background-color: white;
+    box-shadow: none;
+
+}
+.book-read p {
+padding-right: 2rem;
 }
