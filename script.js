@@ -121,4 +121,23 @@ function renderLibrary() {
 	} else {
 		dynamicRead.textContent = "Read";
 	}
-}
+
+	readChanges.addEventListener("click", function () {
+		let curIndedx = myLibrary.findIndex(
+			(book) => newCard.getAttribute("eleId") == book.arrId
+		);
+		if (dynamicRead.textContent === "Read") {
+			dynamicRead.textContent = "Unread";
+			myLibrary[curIndedx].read = false;
+		} else {
+			dynamicRead.textContent = "Read";
+			myLibrary[curIndedx].read = true;
+		}
+	});
+
+	//Open
+	nodeAddBookBtn.addEventListener("click", function () {
+		nodeBackground.classList.add("node-background-visible");
+		disModel.classList.add("modal-visible");
+	});
+};
