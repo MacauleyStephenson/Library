@@ -69,6 +69,14 @@ main{
     cursor: pointer;
 }
 
+.node-visible {
+    display: flex;
+}
+
+.node-warn-visible {
+    display: flex;
+}
+
 /* Book container */
 
 .main{
@@ -94,7 +102,7 @@ main{
         display: none;
 
 }
-.main-visible {
+.node-visible {
     display: block;
 }
 .node-background-visible{
@@ -276,11 +284,11 @@ display: none;
    display: none;
 }
 
-.warn-modal-visible {
+.warn-node-visible {
     display: flex;
 }
 
-.warn-modal-background-visible {
+.warn-node-background-visible {
     display: flex;
 }
 

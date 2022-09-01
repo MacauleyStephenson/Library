@@ -3,7 +3,7 @@ const nodeBackground = document.querySelector(".node-background");
 const nodeCloseBtn = document.querySelector(".close");
 const nodeBookModel = document.querySelector(".node-add-book");
 const nodeDeleteBackground = document.querySelector(".node-delete-modal-background");
-const nodeDeleteWarning = document.querySelector(".node-delete-warning warning-style");
+const nodeDeleteAllWarning = document.querySelector(".node-delete-warning warning-style");
 
 //Start Buttons
 const nodeAddBookBtn = document.querySelector(".add");
@@ -25,7 +25,7 @@ let pagesInput = document.getElementById("pages");
 let readInput = document.getElementById("read");
 
 //Objects array
-let elementId;
+let elementid;
 const myLibrary = [];
 class Book {
 	arrId = (Date.now() + "").slice(-10);
@@ -45,13 +45,14 @@ nodeFormAddBtn.addEventListener("click", function () {
 		pagesInput.value,
 		readInput.checked,
 	);
-	elementId = newBook.arrId;
+	elementid = newBook.arrId;
 	myLibrary.push(newBook);
 	renderLibrary();
 	nodeBackground.classList.remove();
 	disModel.classList.remove();
 	form.reset()
 });
+
 function renderLibrary() {
 	const newCard = document.createElement("div");
 	const deleteBook = document.createElement("img");
@@ -75,7 +76,7 @@ function renderLibrary() {
 		"src",
 		"img"
 	);
-	newCard.setAttribute(`eleId`, `${elementId}`);
+	newCard.setAttribute(`eleId`, `${elementid}`);
 	//
 
 	newCard.appendChild(titleDiv);
@@ -138,6 +139,51 @@ function renderLibrary() {
 	//Open
 	nodeAddBookBtn.addEventListener("click", function () {
 		nodeBackground.classList.add("node-background-visible");
-		disModel.classList.add("modal-visible");
+		disModel.classList.add("node-visible");
 	});
-};
+	// close add book modal
+	nodeBackground.addEventListener("click", function (e) {
+		if (e.target.matches(".node-background-visible")) {
+			nodeBackground.classList.remove("node-background-visible");
+			disModel.classList.remove("node-visible");
+			form.reset();
+		}
+	});
+	nodeCloseBtn.addEventListener("click", function () {
+		nodeBackground.classList.remove("node-background-visible");
+		disModel.classList.remove("node-visible");
+		form.reset();
+	});
+
+
+	// open delete all modal
+
+	nodeDeleteAllBtn.addEventListener("click", function () {
+		nodeDeleteAllWarning.classList.add("node-visible");
+		nodeDeleteBackground.classList.add("node-warn-visible");
+	});
+	// close delete all modal
+	nodeDelModelBtn.addEventListener("click", function () {
+		nodeDeleteAllWarning.classList.remove("node-visible");
+		nodeDeleteBackground.classList.remove("node-warn-visible");
+	});
+	nodeDeleteBackground.addEventListener("click", function (e) {
+		if (e.target.matches(".node-warn-visible")) {
+			nodeDeleteBackground.classList.remove("node-warn-visible");
+			nodeDeleteAllWarning.classList.remove("node-visible");
+		}
+	});
+	nodeCancelBtn.addEventListener("click", function () {
+		nodeDeleteAllWarning.classList.remove("node-visible");
+		nodeDeleteBackground.classList.remove("node-warn-visible");
+	});
+	nodeDeleteBtn.addEventListener("click", function () {
+		console.log("clicked");
+		document
+			.querySelectorAll(".book-card-container")
+			.forEach((e) => e.parentNode.removeChild(e));
+		myLibrary.splice(0, myLibrary.length);
+		nodeDeleteAllWarning.classList.remove("node-visible");
+		nodeDeleteBackground.classList.remove("node-warn-visible");
+	});
+}
