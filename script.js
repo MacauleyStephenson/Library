@@ -79,9 +79,9 @@ function renderLibrary() {
 	//
 	BookContainer.appendChild(newCard);
 	// render trash can for book delete functionality
-	newCard.appendChild(removeBook);
-	removeBook.classList.add("trash");
-	removeBook.setAttribute(
+	newCard.appendChild(deleteBook);
+	deleteBook.classList.add("trash");
+	deleteBook.setAttribute(
 		"src",
 		"./Images/delete_FILL0_wght400_GRAD0_opsz48.svg"
 	);
@@ -169,23 +169,23 @@ nodeCloseBtn.addEventListener("click", function () {
 // open delete all modal
 
 nodeDeleteAllBtn.addEventListener("click", function () {
-	nodeDeleteAllWarning.classList.add("node-visible");
-	nodeDeleteBackground.classList.add("node-warn-visible");
+	nodeDeleteAllWarning.classList.add("warn-node-visible");
+	nodeDeleteBackground.classList.add("warn-node-background-visible");
 });
 // close delete all modal
 nodeDelModelBtn.addEventListener("click", function () {
-	nodeDeleteAllWarning.classList.remove("node-visible");
-	nodeDeleteBackground.classList.remove("node-warn-visible");
+	nodeDeleteAllWarning.classList.remove("warn-node-visible");
+	nodeDeleteBackground.classList.remove("warn-node-background-visible");
 });
 nodeDeleteBackground.addEventListener("click", function (e) {
 	if (e.target.matches(".node-warn-visible")) {
-		nodeDeleteBackground.classList.remove("node-warn-visible");
-		nodeDeleteAllWarning.classList.remove("node-visible");
+		nodeDeleteBackground.classList.remove("warn-node-background-visible");
+		nodeDeleteAllWarning.classList.remove("warn-node-visible");
 	}
 });
 nodeCancelBtn.addEventListener("click", function () {
-	nodeDeleteAllWarning.classList.remove("node-visible");
-	nodeDeleteBackground.classList.remove("node-warn-visible");
+	nodeDeleteAllWarning.classList.remove("warn-node-visible");
+	nodeDeleteBackground.classList.remove("warn-node-background-visible");
 });
 nodeDeleteBtn.addEventListener("click", function () {
 	console.log("clicked");
@@ -193,8 +193,8 @@ nodeDeleteBtn.addEventListener("click", function () {
 		.querySelectorAll(".book-card-container")
 		.forEach((e) => e.parentNode.removeChild(e));
 	myLibrary.splice(0, myLibrary.length);
-	nodeDeleteAllWarning.classList.remove("node-visible");
-	nodeDeleteBackground.classList.remove("node-warn-visible");
+	nodeDeleteAllWarning.classList.remove("warn-node-visible");
+	nodeDeleteBackground.classList.remove("warn-node-background-visible");
 });
 
 
